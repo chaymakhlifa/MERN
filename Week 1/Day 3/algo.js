@@ -1,0 +1,5 @@
+function binaryserach(sortedNums, searchNum){
+     
+
+
+}

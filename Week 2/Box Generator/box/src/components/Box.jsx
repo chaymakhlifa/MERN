@@ -1,19 +1,26 @@
-import React from "react";
+import React,{ useState } from "react";
 
 
 const Box = ()=>{
+const [msg, setMsg] = useState("");
+const handleSubmit = (e) => {
+    e.preventDefault();
+console.log(msg)
+};
+
     return (
         <div>
             <h1>Color</h1>
-            <input className="sun"></input>
-            <button className="btn">Add</button>
+            <form  onSubmit={ handleSubmit }>
+            <input className="sun"  onChange={ (e) => setMsg(e.target.value)} value={ msg }/>
+
+            <button className="btn" >Add</button>
+            </form>
+            {msg}
             <div className="box">
-                <div className="card">
+                <div style={{backgroundColor: "red", height: "50px" ,width: "80px"}}>
                 </div>
-                <div className="card-1">
-                </div>
-                <div className="card-2">
-                </div>
+                
             </div>
         </div>
         
